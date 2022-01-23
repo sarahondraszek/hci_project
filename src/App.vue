@@ -50,7 +50,7 @@ export default {
 
 .column {
   float: left;
-  width: 47.438%;
+  width: 30vw;
   height: 200px;
   padding: 15px;
   border: solid #1c1c1b;
