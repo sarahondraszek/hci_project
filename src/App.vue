@@ -43,6 +43,7 @@ html {
   -o-background-size: cover;
   background-size: cover;
 }
+
 #app {
   font-family: "A Day in September", sans-serif;
   -webkit-font-smoothing: antialiased;
