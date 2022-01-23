@@ -36,16 +36,18 @@ export default {
 </script>
 
 <style>
+html {
+  background-color: #545454;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 #app {
   font-family: "A Day in September", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  /* background: #1b1b1c url("assets/space_bg.jpg") no-repeat center;
-  background-size: cover; */
-  background-color: #545454;
-  margin: 0;
-  height: 100vh;
 }
 
 .column {
