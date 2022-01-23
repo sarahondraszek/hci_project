@@ -1,28 +1,71 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div id="app">
+      <Header pagetitle="SpaceGate 54" />
+      <Navigation></Navigation>
+      <div class="row">
+        <div class="column">
+          <Description/>
+        </div>
+        <div class="column">
+          <Login/>
+        </div>
+        <div class="column">
+          <News/>
+        </div>
+      </div>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from "@/components/Header";
+import Login from "@/components/Login";
+import Navigation from "@/components/Navigation";
+import Description from "@/components/Description";
+import News from "@/components/News.vue"
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Header,
+    Login,
+    Navigation,
+    Description,
+    News
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "A Day in September", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  /* background: #1b1b1c url("assets/space_bg.jpg") no-repeat center;
+  background-size: cover; */
+  background-color: #545454;
+  margin: 0;
+  height: 100vh;
+}
+
+.column {
+  float: left;
+  width: 47.438%;
+  height: 200px;
+  padding: 15px;
+  border: solid #1c1c1b;
+  overflow: auto;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
 }
 </style>
