@@ -1,6 +1,6 @@
-# hci_project
+# Welcome to the project repository of SpaceGate 54!
 
-## Project setup
+## For setting up the project, please follow the given instructions below:
 ```
 yarn install
 ```
