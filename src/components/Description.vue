@@ -1,11 +1,21 @@
 <template>
-  <div id="description-block">
-    <h2 id="description-title">Information regarding SpaceGate 54</h2>
-    <p id="description-text">
-      Welcome to SpaceGate 54, your course registration portal for Trier Space University. <br>
-      For getting access to your courses, please login with your username and password.
-    </p>
-  </div>
+  <v-container>
+  <v-row>
+    <v-col cols="12"
+           md="12">
+      <h2 id="description-title">Information regarding SpaceGate 54</h2>
+    </v-col>
+  </v-row>
+  <v-row>
+    <v-col cols="12"
+           md="12">
+      <p>
+        Welcome to SpaceGate 54, your course registration portal for Trier Space University. <br>
+        For getting access to your courses, please login with your username and password.
+      </p>
+    </v-col>
+  </v-row>
+  </v-container>
 </template>
 
 <script>
@@ -16,7 +26,8 @@ export default {
 
 <style scoped>
   #description-title {
-    color: #a6a6a6;
-    background-color: #b05020;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: #E95A24;
   }
 </style>

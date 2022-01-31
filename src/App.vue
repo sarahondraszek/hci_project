@@ -1,74 +1,42 @@
 <template>
-    <div id="app">
-      <Header pagetitle="SpaceGate 54" />
-      <Navigation></Navigation>
-      <div class="row">
-        <div class="column">
-          <Description/>
-        </div>
-        <div class="column">
-          <Login/>
-        </div>
-        <div class="column">
-          <News/>
-        </div>
-      </div>
-    </div>
+  <v-app>
+    <!-- Must have the app property -->
+    <v-app-bar app
+               prominent >
+
+      <router-link to="/">
+        <v-img src="@/assets/spacegate54.png"
+               contain
+                                 id="sg-ig"></v-img>
+        <h1 id="page-title">
+          SpaceGate 54
+        </h1>
+      </router-link>
+    </v-app-bar>
+    <v-main><router-view/></v-main>
+    <v-footer padless>
+      <v-col
+          class="text-center"
+          cols="12"
+      >
+        {{ new Date().getFullYear() }} — <strong>Space University Trier</strong>
+      </v-col>
+      </v-footer>
+  </v-app>
 </template>
 
-<script>
-import Header from "@/components/Header";
-import Login from "@/components/Login";
-import Navigation from "@/components/Navigation";
-import Description from "@/components/Description";
-import News from "@/components/News.vue"
-
-export default {
-  name: 'App',
-  components: {
-    Header,
-    Login,
-    Navigation,
-    Description,
-    News
-  }
-}
-</script>
-
 <style>
-html {
-  background-color: #545454;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-#app {
-  font-family: "A Day in September", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-}
-
-.column {
+#sg-ig {
+  margin: 10px;
+  width: 90px;
+  height: 92px;
   float: left;
-  width: 30vw;
-  height: 200px;
-  padding: 15px;
-  border: solid #1c1c1b;
-  overflow: auto;
+  vertical-align:middle;
 }
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-@media screen and (max-width:600px) {
-  .column {
-    width: 100%;
-  }
+#page-title {
+  font-family: "Audiowide", sans-serif;
+  font-size: 40px;
+  color: #E95A24;
+  float: left;
 }
 </style>

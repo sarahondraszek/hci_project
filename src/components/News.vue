@@ -1,32 +1,49 @@
 <template>
-  <div id="description-block">
-    <h2 id="news">News for SpaceGate 54 Users</h2>
-    <div class="news-feed">
-      <h3 class="news-head">Journey to Xandar</h3>
-      <p id="description-text">
-        The university's president was sent on a mission to Xandar to recruit further tutors and professors for Space University. <br>
-        We all wish him a peaceful journey!
-      </p>
-      <img src="../assets/IMG_2900.jpg" style="height: 300px;width: 500px;" alt="Alt">
-      <h3 class="news-head">News Courses Available</h3>
-      <p>Cheerful news for all our students: New courses are available in the registration system! <br>
-        If you haven't seen the update yet, please don't hesitate to see if you have access to new courses.</p>
-      <img src="../assets/bg_2.jpg" style="height: 300px;width: 500px" alt="Alt">
-    </div>
+        <v-container>
+          <h2 id="news-head">News for SpaceGate 54 Users</h2>
+          <vueper-slides fixed-height="50vh"
+                         slide-content-outside="top"
+                         autoplay
+          >
+            <vueper-slide v-for="(slide, i) in slides"
+                          :key="i"
+                          :image="slide.image"
+                          :title="slide.title"
+                          :content="slide.content"
+                          />
 
-  </div>
+          </vueper-slides>
+        </v-container>
 </template>
 
 <script>
+import { VueperSlides, VueperSlide } from 'vueperslides'
+import 'vueperslides/dist/vueperslides.css'
+
 export default {
-  name: "News"
-}
+  components: { VueperSlides, VueperSlide },
+  name: "News",
+  data: () => ({
+    slides: [
+      {
+        title:'<h3>Journey to Xandar</h3>',
+        content: "The university's president was sent on a mission to Xandar to recruit further tutors and professors for Space University. We all wish him a peaceful journey!",
+        image: require('../assets/IMG_2900.jpg'),
+      },
+      {
+        title: '<h3>New Courses Available</h3>',
+        content:"Cheerful news for all our students: New courses are available in the registration system! If you haven't seen the update yet, please don't hesitate to see if you have access to new courses.",
+        image: require('../assets/bg_2.jpg'),
+      }
+    ]
+  }),
+};
 </script>
 
 <style scoped>
-#news {
-  color: #a6a6a6;
-  background-color: #b05020;
+#news-head {
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #E95A24;
 }
-
 </style>
