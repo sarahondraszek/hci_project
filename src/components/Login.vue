@@ -16,7 +16,7 @@
         <v-text-field
             v-model="username"
             color="#E65100"
-            :rules="nameRules"
+            :rules="[nameRules.required, nameRules.count, nameRules.exist]"
             :counter="10"
             label="Username"
             required
@@ -42,10 +42,12 @@
     </v-row>
     <v-row>
       <v-col class="text-right">
-
-        <router-link style="text-decoration: none; color: inherit;" to="/student"><v-btn
+        <router-link v-if="username === 'student'" style="text-decoration: none; color: inherit;" to="/student"><v-btn
             elevation="2"
-        >Login</v-btn></router-link>
+        ><v-icon>mdi-rocket</v-icon>Off we go!</v-btn></router-link>
+        <router-link v-if="username === 'teacher'" style="text-decoration: none; color: inherit;" to="/student"><v-btn
+            elevation="2"
+        ><v-icon>mdi-rocket</v-icon>Off we go!</v-btn></router-link>
       </v-col>
     </v-row>
     </v-container>
@@ -59,10 +61,11 @@ export default {
     valid: false,
     username: '',
     password: '',
-    nameRules: [
-      v => !!v || 'Name is required',
-      v => v.length <= 10 || 'Name must be less than 10 characters',
-    ], }),
+    nameRules: {
+      required: value => !!value || 'Name is required',
+      count: value => value.length <= 10 || 'Name must be less than 10 characters',
+      exist: value => (value ==='student' || value==='teacher') || 'Your username must be "student" or "teacher"',
+    }, }),
   }
 </script>
 
