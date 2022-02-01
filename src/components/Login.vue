@@ -84,8 +84,8 @@
 </template>
 
 <script>
-const studentNames = ['fabian', 'kinga', 'sarah', 'chloe', 'johannes', 'will', 'hurensohn'];
-const teacherNames = ['fabian', 'kinga', 'sarah', 'hank', 'maja'];
+const studentNames = ['student', 'fabian', 'kinga', 'sarah', 'chloe', 'johannes', 'will', 'hurensohn'];
+const teacherNames = ['teacher', 'fabian', 'kinga', 'sarah', 'hank', 'maja'];
 export default {
   name: "Login",
   props: ["title"],
