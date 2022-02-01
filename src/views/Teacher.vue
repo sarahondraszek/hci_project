@@ -1,8 +1,7 @@
 <template>
   <v-container>
     <v-row>
-      <v-col cols="12"
-             md="10">
+      <v-col cols="10">
         <v-card class="mx-auto"
                 max-width="900">
           <v-toolbar
@@ -25,8 +24,7 @@
           </draggable>
         </v-card>
       </v-col>
-      <v-col cols="12"
-             md="2">
+      <v-col cols="2">
         <v-card class="pa-md-4" color="dark-grey">
           <v-img src="@/assets/book-bag.png" contain></v-img>
           <v-card-actions class="justify-center">
