@@ -63,7 +63,7 @@
         </template>
       </v-list-item-group>
     </v-list>
-    <v-row>
+    <v-row class="px-3 pt-1">
       <v-col class="text-left">
         <router-link style="text-decoration: none; color: inherit;" to="/student">
           <v-btn
@@ -94,18 +94,21 @@ export default {
         headline: 'Info',
         subtitle: `Kurze Beschreibung des Kurses`,
         title: 'Einführung in die BWL',
+        sws: 5
       },
       {
         action: 'Pflicht',
         headline: 'Info',
         subtitle: `Kurze Beschreibung des Kurses`,
         title: 'Einführung in die VWL',
+        sws: 5
       },
       {
         action: 'Pflicht',
         headline: 'Info',
         subtitle: `Kurze Beschreibung des Kurses`,
         title: 'Mathe 1',
+        sws: 10
       },
     ],
   }),

@@ -17,14 +17,16 @@
 
           <draggable class="row" :sort="true">
             <v-col>
-              <Course courseid="BWL-001" title="Einführung in die BWL" teacher="Mueller" location="Audimax"
-                      time="Mo, 10:15"/>
+              <Course courseID="BWL-001" title="Einführung in die BWL" teacher="Mueller" location="Audimax"
+                      time="Mo, 10:15" sws="5"/>
             </v-col>
             <v-col>
-              <Course courseid="BWL-002" title="Einführung in die VWL" teacher="Haupt" location="A18" time="Di, 14:15"/>
+              <Course courseID="BWL-002" title="Einführung in die VWL" teacher="Haupt" location="A18"
+                      time="Di, 14:15" sws="5"/>
             </v-col>
             <v-col>
-              <Course courseid="BWL-003" title="Mathe 1" teacher="Drews" location="B35" time="Do, 12:15"/>
+              <Course courseID="BWL-003" title="Mathe 1" teacher="Drews" location="B35"
+                      time="Do, 12:15" sws="10"/>
             </v-col>
           </draggable>
         </v-card>

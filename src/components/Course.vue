@@ -1,16 +1,16 @@
 <template>
   <v-container>
-    <v-card elevation="2"
+    <v-card elevation="10"
             max-width="344">
       <v-list-item three-line>
         <v-list-item-content>
           <div class="text-overline mb-4">
-            {{ courseid }}
+            {{ CourseID }}
           </div>
           <v-list-item-title class="text-h5 mb-1">
             {{ title }}
           </v-list-item-title>
-          <v-list-item-subtitle>Kurze Beschreibung des Kurses</v-list-item-subtitle>
+          <v-list-item-subtitle>{{ sws }} SWS</v-list-item-subtitle>
           <v-list-item-subtitle>Professor: {{ teacher }}</v-list-item-subtitle>
           <v-list-item-subtitle>Location: {{ location }}</v-list-item-subtitle>
           <v-list-item-subtitle>Time: {{ time }}</v-list-item-subtitle>
@@ -29,7 +29,8 @@ export default {
     location: String,
     time: String,
     src: String,
-    courseid: String
+    courseID: String,
+    sws: Number,
   },
   data() {
     return {};
