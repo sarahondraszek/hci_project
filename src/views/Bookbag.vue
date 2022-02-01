@@ -65,46 +65,50 @@
     </v-list>
     <v-row>
       <v-col class="text-left">
-    <router-link style="text-decoration: none; color: inherit;" to="/student"><v-btn
-        elevation="2"
-    >Return to courses</v-btn></router-link>
+        <router-link style="text-decoration: none; color: inherit;" to="/student">
+          <v-btn
+              elevation="2"
+          >Return to courses
+          </v-btn>
+        </router-link>
       </v-col>
       <v-col class="text-right">
-    <v-btn
-        elevation="2">Confirm</v-btn>
+        <v-btn
+            elevation="2">Confirm
+        </v-btn>
       </v-col>
     </v-row>
 
 
-</v-card>
+  </v-card>
 </template>
 
 <script>
 export default {
   name: "Bookbag",
   data: () => ({
-        selected: [2],
-        items: [
-          {
-            action: 'Pflicht',
-            headline: 'Info',
-            subtitle: `Kurze Beschreibung des Kurses`,
-            title: 'Einführung in die BWL',
-          },
-          {
-            action: 'Pflicht',
-            headline: 'Info',
-            subtitle: `Kurze Beschreibung des Kurses`,
-            title: 'Einführung in die VWL',
-          },
-          {
-            action: 'Pflicht',
-            headline: 'Info',
-            subtitle: `Kurze Beschreibung des Kurses`,
-            title: 'Mathe 1',
-          },
-        ],
-      }),
+    selected: [2],
+    items: [
+      {
+        action: 'Pflicht',
+        headline: 'Info',
+        subtitle: `Kurze Beschreibung des Kurses`,
+        title: 'Einführung in die BWL',
+      },
+      {
+        action: 'Pflicht',
+        headline: 'Info',
+        subtitle: `Kurze Beschreibung des Kurses`,
+        title: 'Einführung in die VWL',
+      },
+      {
+        action: 'Pflicht',
+        headline: 'Info',
+        subtitle: `Kurze Beschreibung des Kurses`,
+        title: 'Mathe 1',
+      },
+    ],
+  }),
 }
 </script>
 

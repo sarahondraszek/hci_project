@@ -11,20 +11,16 @@
           >
             <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
-            <v-toolbar-title>Courses Winter 2022</v-toolbar-title>
+            <v-toolbar-title>Your courses of past semesters</v-toolbar-title>
             <v-spacer></v-spacer>
           </v-toolbar>
 
           <draggable class="row" :sort="true">
             <v-col>
-              <Course courseid="BWL-001" title="Einführung in die BWL" teacher="Mueller" location="Audimax"
-                      time="Mo, 10:15"/>
+              <Course courseid="CS-008" title="Data Structures" teacher="You" location="HS12" time="Mo, 10:15"/>
             </v-col>
             <v-col>
-              <Course courseid="BWL-002" title="Einführung in die VWL" teacher="Haupt" location="A18" time="Di, 14:15"/>
-            </v-col>
-            <v-col>
-              <Course courseid="BWL-003" title="Mathe 1" teacher="Drews" location="B35" time="Do, 12:15"/>
+              <Course courseid="CS-003" title="Logic" teacher="You" location="HS10" time="Tue, 10:15 and Fr, 12:15"/>
             </v-col>
           </draggable>
         </v-card>
@@ -34,14 +30,14 @@
         <v-card class="pa-md-4" color="dark-grey">
           <v-img src="@/assets/book-bag.png" contain></v-img>
           <v-card-actions class="justify-center">
-            <router-link style="text-decoration: none; color: inherit;" to="/bookbag">
+            <router-link style="text-decoration: none; color: inherit;" to="/courseCreation">
               <v-btn
                   outlined
                   rounded
                   text
                   color="orange accent-4"
               >
-                View Bookbag
+                Open courses<br>for students
               </v-btn>
             </router-link>
           </v-card-actions>

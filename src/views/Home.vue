@@ -1,15 +1,15 @@
 <template>
-    <v-container>
-      <v-row>
-        <v-col>
-          <Description/>
-          <Login/>
-        </v-col>
-        <v-col>
-          <News/>
-          </v-col>
-      </v-row>
-    </v-container>
+  <v-container>
+    <v-row>
+      <v-col>
+        <Description/>
+        <Login/>
+      </v-col>
+      <v-col>
+        <News/>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
