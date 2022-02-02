@@ -7,11 +7,9 @@
           <v-toolbar
               color="#E95A24">
             <v-app-bar-nav-icon></v-app-bar-nav-icon>
-
             <v-toolbar-title>Your courses of past semesters</v-toolbar-title>
             <v-spacer></v-spacer>
           </v-toolbar>
-
           <draggable class="row" :sort="true">
             <v-col>
               <Course courseID="CS-008" title="Data Structures" teacher="You" location="HS12"
@@ -49,11 +47,63 @@
           <v-toolbar
               color="#E95A24">
             <v-app-bar-nav-icon></v-app-bar-nav-icon>
-
             <v-toolbar-title>Create new course</v-toolbar-title>
             <v-spacer></v-spacer>
           </v-toolbar>
-
+          <v-col>
+            <v-text-field
+                v-model="value"
+                color="#E65100"
+                :counter="2"
+                label="Course ID Prefix"
+            ></v-text-field>
+            <v-text-field
+                v-model="value"
+                color="#E65100"
+                :counter="30"
+                label="Course Name"
+            ></v-text-field>
+            <v-text-field
+                v-model="value"
+                color="#E65100"
+                :counter="2"
+                label="SWS"
+            ></v-text-field>
+            <v-text-field
+                v-model="value"
+                color="#E65100"
+                :counter="30"
+                label="Teacher"
+            ></v-text-field>
+            <v-text-field
+                v-model="value"
+                color="#E65100"
+                :counter="10"
+                label="Location"
+            ></v-text-field>
+            <v-text-field
+                v-model="value"
+                color="#E65100"
+                :counter="20"
+                label="Time"
+            ></v-text-field>
+            <v-tooltip bottom>
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn
+                    v-bind="attrs"
+                    v-on="on"
+                    elevation="2"
+                    color="#E95A24"
+                >
+                  <v-icon class="mr-2">
+                    mdi-check-bold
+                  </v-icon>
+                  Create course
+                </v-btn>
+              </template>
+              <span>Login as teacher</span>
+            </v-tooltip>
+          </v-col>
         </v-card>
       </v-col>
     </v-row>
@@ -63,6 +113,7 @@
 <script>
 import draggable from "vuedraggable";
 import Course from "@/components/Course";
+
 export default {
   name: "Teacher",
   components: {
@@ -70,8 +121,8 @@ export default {
     Course,
   },
   data: () => ({
-    form:{
-      courseid: "",
+    form: {
+      courseID: "",
       title: "",
       teacher: "",
       location: "",

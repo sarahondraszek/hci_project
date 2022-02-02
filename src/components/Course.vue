@@ -4,14 +4,14 @@
             max-width="344">
       <v-list-item three-line>
         <v-list-item-content>
-          <div class="text-overline mb-4">
-            {{ CourseID }}
+          <div class="text-overline mb-1">
+            {{ courseID }}
           </div>
           <v-list-item-title class="text-h5 mb-1">
             {{ title }}
           </v-list-item-title>
           <v-list-item-subtitle>{{ sws }} SWS</v-list-item-subtitle>
-          <v-list-item-subtitle>Professor: {{ teacher }}</v-list-item-subtitle>
+          <v-list-item-subtitle>Teacher: {{ teacher }}</v-list-item-subtitle>
           <v-list-item-subtitle>Location: {{ location }}</v-list-item-subtitle>
           <v-list-item-subtitle>Time: {{ time }}</v-list-item-subtitle>
         </v-list-item-content>
