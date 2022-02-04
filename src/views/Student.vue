@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row dense>
-      <v-col cols="10">
+      <v-col cols="7">
         <v-card class="mx-auto"
                 max-width="900">
           <v-toolbar
@@ -12,8 +12,8 @@
             <v-toolbar-title>Courses Winter 2022</v-toolbar-title>
             <v-spacer></v-spacer>
           </v-toolbar>
-          <v-row>
-            <draggable :list="allCourses.offered" group="allCourses" >
+
+            <draggable class="row" v-model="allCourses.offered" group="allCourses" >
             <Course v-for="course in allCourses.offered"
                     :key="course.courseID"
                     :courseID='course.courseID'
@@ -24,10 +24,11 @@
                     :sws='course.sws'
                     />
             </draggable>
-          </v-row>
-          <v-row>
-            <draggable :list="allCourses.booked" group="allCourses">
-          <Course v-for="course in allCourses.booked"
+        </v-card>
+      </v-col>
+      <v-col cols="3">
+        <draggable v-model="allCourses.booked" group="allCourses">
+          <!--<Course v-for="course in allCourses.booked"
                   :key="course.courseID"
                   :courseID='course.courseID'
                   :title='course.title'
@@ -35,13 +36,10 @@
                   :location='course.location'
                   :time='course.time'
                   :sws='course.sws'
-                  />
-            </draggable>
-          </v-row>
-        </v-card>
-      </v-col>
-      <v-col cols="1">
-        <DropArea_Bag/>
+          />-->
+          <DropArea_Bag/>
+        </draggable>
+
       </v-col>
     </v-row>
   </v-container>
@@ -76,13 +74,14 @@ export default {
           time: "Di, 14:15",
           sws:5,},
         {
-        courseID: "BWL-003",
+          courseID: "BWL-003",
           title: "Mathe 1",
           teacher: "Drews",
           location: "B35",
           time: "Do, 12:15",
           sws: 10,
-        }],
+        }
+        ],
         booked: [],
       }
     }

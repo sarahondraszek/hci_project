@@ -1,6 +1,6 @@
 <template>
   <v-card class="pa-md-4" color="dark-grey" min-height="50px">
-    <!--<v-img src="@/assets/book-bag.png" contain></v-img>-->
+    <v-img src="@/assets/book-bag.png" contain></v-img>
     <v-card-actions class="justify-center">
       <router-link style="text-decoration: none; color: inherit;" to="/bookbag">
         <v-btn
