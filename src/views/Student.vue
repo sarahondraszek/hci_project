@@ -1,18 +1,24 @@
 <template>
-  <v-container>
-    <v-row dense>
-      <v-col cols="7">
-        <v-card class="mx-auto"
-                max-width="900">
-          <v-toolbar
+  <v-card style="height:100%">
+    <v-row>
+    <v-toolbar
               color="#E95A24"
               dark
           >
             <v-app-bar-nav-icon></v-app-bar-nav-icon>
             <v-toolbar-title>Courses Winter 2022</v-toolbar-title>
-            <v-spacer></v-spacer>
           </v-toolbar>
-
+    </v-row>
+      <v-row>
+          <v-tabs vertical grow color="#E95A24">
+            <v-tab class="vert-tab">
+              Enroll
+            </v-tab>
+            <v-tab class="vert-tab">
+              Option 2
+            </v-tab>
+          <v-tab-item>
+            <v-col cols="8">
             <draggable class="row" v-model="allCourses.offered" group="allCourses" >
             <Course v-for="course in allCourses.offered"
                     :key="course.courseID"
@@ -24,36 +30,46 @@
                     :sws='course.sws'
                     />
             </draggable>
-        </v-card>
-      </v-col>
-      <v-col cols="3">
-        <draggable v-model="allCourses.booked" group="allCourses">
-          <!--<Course v-for="course in allCourses.booked"
-                  :key="course.courseID"
-                  :courseID='course.courseID'
-                  :title='course.title'
-                  :teacher='course.teacher'
-                  :location='course.location'
-                  :time='course.time'
-                  :sws='course.sws'
-          />-->
-          <DropArea_Bag/>
-        </draggable>
+            </v-col>
+            <v-col cols="2">
+              <v-card class="pa-md-4" color="dark-grey">
+                <draggable v-model="allCourses.booked" group="allCourses">
+                </draggable>
+                <v-img src="@/assets/book-bag.png" contain></v-img>
+                <v-card-actions class="justify-center">
+                  <router-link style="text-decoration: none; color: inherit;" to="/courseCreation">
+                    <v-btn
+                        outlined
+                        rounded
+                        text
+                        color="orange accent-4">
+                      Open courses<br>for students
+                    </v-btn>
+                  </router-link>
+                </v-card-actions>
+              </v-card>
+            </v-col>
 
-      </v-col>
+
+      </v-tab-item>
+      <v-tab-item>
+        <p>Page 2</p>
+      </v-tab-item>
+      </v-tabs>
     </v-row>
-  </v-container>
+  </v-card>
+
 </template>
 
 <script>
 import draggable from "vuedraggable";
 import Course from "@/components/Course";
-import DropArea_Bag from "@/components/DropArea_Bag";
+//import DropArea_Bag from "@/components/DropArea_Bag";
 export default {
   name: "Student",
   components: {
     draggable,
-    DropArea_Bag,
+    //DropArea_Bag,
     Course
   },
   data() {
@@ -92,5 +108,7 @@ export default {
 </script>
 
 <style scoped>
-
+.vert-tab{
+  transform: rotate(270deg);
+}
 </style>

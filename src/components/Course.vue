@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-card elevation="10"
+    <v-card class="course-card" elevation="10"
             max-width="300">
       <v-list-item three-line>
         <v-list-item-content>
@@ -37,3 +37,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.course-card {
+  float:left;
+}
+</style>
