@@ -18,7 +18,7 @@
               Option 2
             </v-tab>
           <v-tab-item>
-            <v-col cols="8">
+            <v-col>
             <draggable class="row" v-model="allCourses.offered" group="allCourses" >
             <Course v-for="course in allCourses.offered"
                     :key="course.courseID"
@@ -35,22 +35,20 @@
               <v-card class="pa-md-4" color="dark-grey">
                 <draggable v-model="allCourses.booked" group="allCourses">
                 </draggable>
-                <v-img src="@/assets/book-bag.png" contain></v-img>
+                <v-img src="@/assets/bag.png" contain></v-img>
                 <v-card-actions class="justify-center">
-                  <router-link style="text-decoration: none; color: inherit;" to="/courseCreation">
+                  <router-link style="text-decoration: none; color: inherit;" to="/Bookbag">
                     <v-btn
                         outlined
                         rounded
                         text
                         color="orange accent-4">
-                      Open courses<br>for students
+                      Review Bookbag
                     </v-btn>
                   </router-link>
                 </v-card-actions>
               </v-card>
             </v-col>
-
-
       </v-tab-item>
       <v-tab-item>
         <p>Page 2</p>
