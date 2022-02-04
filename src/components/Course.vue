@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-card elevation="10"
-            max-width="344">
+            max-width="300">
       <v-list-item three-line>
         <v-list-item-content>
           <div class="text-overline mb-1">
