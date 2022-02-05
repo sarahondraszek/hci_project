@@ -87,7 +87,7 @@
 export default {
   name: "Bookbag",
   data: () => ({
-    selected: [2],
+    selected: [],
     items: [
       {
         action: 'Pflicht',

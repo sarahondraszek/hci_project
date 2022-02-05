@@ -17,7 +17,8 @@
         <v-spacer/>
           <v-menu bottom offset-y>
             <template v-slot:activator="{ on, attrs }">
-              <v-btn tile v-bind="attrs" v-on="on">
+              <v-btn tile outlined
+                     v-bind="attrs" v-on="on" color="#E95A24">
                 <v-icon>mdi-translate</v-icon>
                 <v-icon>mdi-menu-down</v-icon>
               </v-btn>
