@@ -2,9 +2,9 @@
   <v-app>
     <!-- Header Bereich -->
     <v-app-bar app
-               prominent >
-      <v-row align="center" justify="space-between" >
-        <v-col cols="11">
+               prominent>
+      <v-row align="center" justify="end" >
+        <v-container>
           <router-link to="/" >
             <v-img src="@/assets/spacegate54.png"
                    contain
@@ -13,15 +13,30 @@
               SpaceGate 54
             </h1>
           </router-link>
-        </v-col>
-        <v-col v-if="$route.name !== 'Home'">
-          <User/>
-        </v-col>
+        </v-container>
+        <v-spacer/>
+          <v-menu bottom offset-y>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn tile v-bind="attrs" v-on="on">
+                <v-icon>mdi-translate</v-icon>
+                <v-icon>mdi-menu-down</v-icon>
+              </v-btn>
+            </template>
+            <v-list dense>
+              <v-list-item v-for="language in languages" :key="language.name">
+                <v-list-item-content>
+                  <v-list-item-title v-text="language.name" />
+                </v-list-item-content>
+              </v-list-item>
+            </v-list>
+          </v-menu>
+        <v-spacer/>
+          <User v-if="$route.name !== 'Home'"/>
       </v-row>
 
     </v-app-bar>
 
-    <!-- Hauptseite, enthält immer die aktuelle Sicht-->
+    <!-- Hauptseite-->
     <v-main><router-view/></v-main>
 
     <!-- Footer-->
@@ -42,7 +57,18 @@ export default {
   components: {
     User,
   },
-}
+  data() {
+    return {
+      languages: [
+    {
+      name: 'English',
+    },
+    {
+      name: 'Deutsch',
+    }
+    ]
+    }
+}}
 </script>
 <style>
 @import url('https://fonts.googleapis.com/css?family=Audiowide');
