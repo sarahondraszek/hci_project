@@ -13,7 +13,7 @@
 </template>
 
 <script>
-// @ is an alias to /src
+
 import Description from "@/components/Description";
 import News from "@/components/News";
 import Login from "@/components/Login";

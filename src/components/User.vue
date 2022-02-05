@@ -16,7 +16,7 @@
                 color="#E95A24"
                 size="48"
             >
-              <span class="white--text text-h5">{{ user.initials }}</span>
+              <span class="white--text text-h5">{{ initials }}</span>
             </v-avatar>
           </v-btn>
         </template>
@@ -26,12 +26,12 @@
               <v-avatar
                   color="#E95A24"
               >
-                <span class="white--text text-h5">{{ user.initials }}</span>
+                <span class="white--text text-h5">{{ initials }}</span>
               </v-avatar>
-              <h3>{{ user.fullName }}</h3>
+              <h3>{{ fullName }}</h3>
               <p class="text-caption mt-2">
                 <v-icon>mdi-email</v-icon>
-                {{ user.email }}
+                {{ email }}
               </p>
               <v-divider class="my-3"></v-divider>
               <v-btn
@@ -60,13 +60,11 @@
 <script>
 export default {
   name: "User",
-  data: () => ({
-    user: {
-      initials: 'MD',
-      fullName: 'Maya Drews',
-      email: 'maya.drews@space-university.com',
-    },
-  }),
+  props: {
+    initials : String,
+    fullName: String,
+    email: String,
+  }
 }
 </script>
 

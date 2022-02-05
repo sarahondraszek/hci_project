@@ -31,7 +31,7 @@
           </draggable>
           <v-img src="@/assets/bag.png" contain></v-img>
           <v-card-actions class="justify-center">
-            <router-link style="text-decoration: none; color: inherit;" to="/Bookbag">
+            <router-link style="text-decoration: none; color: inherit;" to="/student/bookbag">
               <v-btn
                   outlined
                   rounded

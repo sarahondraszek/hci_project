@@ -2,7 +2,7 @@
   <v-container>
     <v-row>
       <v-col>
-        <Description/>
+        <Welcome/>
       </v-col>
       <v-col>
         <News/>
@@ -12,14 +12,13 @@
 </template>
 
 <script>
-// @ is an alias to /src
-import Description from "@/components/Description";
+import Welcome from "@/components/Welcome";
 import News from "@/components/News";
 
 export default {
-  name: 'Landing',
+  name: 'StudentLanding',
   components: {
-    Description,
+    Welcome,
     News,
   }
 }

@@ -41,13 +41,11 @@
 export default {
   name: "Course",
   components: {},
-
   props: {
     title: String,
     teacher: String,
     location: String,
     time: String,
-    src: String,
     courseID: String,
     sws: Number,
   },

@@ -32,7 +32,12 @@
             </v-list>
           </v-menu>
         <v-spacer/>
-          <User v-if="$route.name !== 'Home'"/>
+        <User v-if="$route.path.match(/\/teacher*/g)"
+          initials="MD" fullName="Maja Drews"
+          email="maja.drews@space-university.com"/>
+        <User v-if="$route.path.match(/\/student*/g)"
+              initials="MR" fullName="Max Reichelt"
+              email="max.reichelt@space-university.com"/>
       </v-row>
 
     </v-app-bar>
@@ -67,9 +72,11 @@ export default {
     {
       name: 'Deutsch',
     }
-    ]
+    ],
+
+      }
     }
-}}
+}
 </script>
 <style>
 @import url('https://fonts.googleapis.com/css?family=Audiowide');

@@ -1,12 +1,13 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import Home from '../views/Home.vue';
 import Student from "@/views/Student";
 import Bookbag from "@/views/Bookbag";
 import Teacher from "@/views/Teacher";
+import CoursePage from "@/views/CoursePage";
+import StudentLanding from "@/views/StudentLanding";
 
 Vue.use(VueRouter)
-
 const routes = [
   {
     path: '/',
@@ -16,12 +17,22 @@ const routes = [
   {
     path: '/student',
     name: 'Student',
-    component: Student
-  },
-  {
-    path: '/bookbag',
-    name: 'Bookbag',
-    component: Bookbag
+    component: Student,
+    children: [
+      {
+        path: '',
+        name:'Landing',
+        component: StudentLanding
+      },
+      {
+        path:'courses',
+        name:'Courses',
+        component: CoursePage
+      },
+      {path: 'bookbag',
+        name: 'Bookbag',
+        component: Bookbag}
+    ]
   },
   {
     path: '/teacher',
