@@ -1,12 +1,12 @@
 <template>
   <v-container>
     <v-row justify="space-between">
-      <v-col cols="6">
+      <v-col cols="9">
         <v-expansion-panels v-model="panel">
           <v-expansion-panel>
             <v-expansion-panel-header color="#E95A24">Mandatory Courses</v-expansion-panel-header>
             <v-expansion-panel-content>
-        <draggable class="row" v-model="allCourses.offered" group="allCourses" >
+        <draggable v-model="allCourses.offered" group="allCourses" >
           <Course v-for="course in allCourses.offered"
                   :key="course.courseID"
                   :courseID='course.courseID'
@@ -26,9 +26,8 @@
           </v-expansion-panels>
       </v-col>
       <v-col cols="3">
-        <v-card class="pa-md-4" max-width="300" color="#272727">
-          <draggable v-model="allCourses.booked" group="allCourses">
-          </draggable>
+        <v-card class="pa-md-4" width="300" color="#272727">
+          <draggable v-model="allCourses.booked" group="allCourses" :empty-insert-threshold="100" ghost-class="hidden-ghost"></draggable>
           <v-img src="@/assets/bag.png" contain></v-img>
           <v-card-actions class="justify-center">
             <router-link style="text-decoration: none; color: inherit;" to="/student/bookbag">
@@ -98,7 +97,15 @@ export default {
             location: "B35",
             time: "Do, 12:15",
             sws: 10,
-          }
+          },
+          {
+            courseID: "BWL-004",
+            title: "Marketing",
+            teacher: "Teichert",
+            location: "C8",
+            time: "Mi, 14:15",
+            sws: 10,
+          },
         ],
         booked: [],
       },
@@ -109,5 +116,7 @@ export default {
 </script>
 
 <style scoped>
-
+.hidden-ghost {
+  display: none;
+}
 </style>

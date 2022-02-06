@@ -65,7 +65,13 @@
     </v-list>
     <v-row class="px-3 pt-1">
       <v-col class="text-left">
-        <router-link style="text-decoration: none; color: inherit;" to="/student/courses">
+        <router-link v-if="$route.name === 'StudentBookbag'" style="text-decoration: none; color: inherit;" to="/student/courses">
+          <v-btn
+              elevation="2"
+          >Return to courses
+          </v-btn>
+        </router-link>
+        <router-link v-if="$route.name === 'TeacherBookbag'" style="text-decoration: none; color: inherit;" to="/teacher/courses">
           <v-btn
               elevation="2"
           >Return to courses

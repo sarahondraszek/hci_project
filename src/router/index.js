@@ -31,7 +31,7 @@ const routes = [
         component: CoursePage
       },
       {path: 'bookbag',
-        name: 'Bookbag',
+        name: 'StudentBookbag',
         component: Bookbag}
     ]
   },
@@ -50,6 +50,9 @@ const routes = [
         name:'Courses',
         component: CourseManagement
       },
+      {path: 'bookbag',
+        name: 'TeacherBookbag',
+        component: Bookbag}
     ]
   }
 ]
