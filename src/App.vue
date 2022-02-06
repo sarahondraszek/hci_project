@@ -4,12 +4,12 @@
     <v-app-bar app
                prominent>
       <v-row align="center" justify="space-between">
-        <v-container class="mx-0" style="max-width: 600px">
+        <v-container class="mx-0" style="width: auto">
           <router-link to="/">
             <v-img src="@/assets/spacegate54.png"
                    contain
                    id="sg-ig"></v-img>
-            <h1 id="page-title">
+            <h1 id="page-title" class="d-none d-md-flex">
               SpaceGate 54
             </h1>
           </router-link>
