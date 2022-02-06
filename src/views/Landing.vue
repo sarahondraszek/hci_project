@@ -1,10 +1,10 @@
 <template>
   <v-container>
     <v-row>
-      <v-col>
+      <v-col cols="6">
         <Welcome/>
       </v-col>
-      <v-col>
+      <v-col cols="6">
         <News/>
       </v-col>
     </v-row>
