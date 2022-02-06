@@ -4,7 +4,7 @@
       <v-col cols="6">
         <v-expansion-panels v-model="panel">
           <v-expansion-panel>
-            <v-expansion-panel-header>Mandatory Courses</v-expansion-panel-header>
+            <v-expansion-panel-header color="#E95A24">Mandatory Courses</v-expansion-panel-header>
             <v-expansion-panel-content>
         <draggable class="row" v-model="allCourses.offered" group="allCourses" >
           <Course v-for="course in allCourses.offered"
@@ -20,7 +20,7 @@
             </v-expansion-panel-content>
           </v-expansion-panel>
           <v-expansion-panel>
-            <v-expansion-panel-header>Optional Courses</v-expansion-panel-header>
+            <v-expansion-panel-header color="#E95A24">Optional Courses</v-expansion-panel-header>
             <v-expansion-panel-content> You have no optional courses available this semester.</v-expansion-panel-content>
           </v-expansion-panel>
           </v-expansion-panels>

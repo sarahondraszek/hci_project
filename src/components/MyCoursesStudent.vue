@@ -1,7 +1,12 @@
 <template>
+  <v-container>
+    <v-card>
+      <v-card-title>My courses</v-card-title>
+      <v-card-text>You can view and edit the courses you are currently enrolled in or view your weekly schedule.</v-card-text>
+    </v-card>
   <v-expansion-panels v-model="panel">
     <v-expansion-panel>
-      <v-expansion-panel-header>Your Current Courses</v-expansion-panel-header>
+      <v-expansion-panel-header color="#E95A24">Your Current Courses</v-expansion-panel-header>
       <v-expansion-panel-content>
         <Course v-for="course in courses"
                 :key="course.courseID"
@@ -15,13 +20,14 @@
        </v-expansion-panel-content>
     </v-expansion-panel>
     <v-expansion-panel>
-      <v-expansion-panel-header>Your Weekly Schedule</v-expansion-panel-header>
+      <v-expansion-panel-header color="#E95A24">Your Weekly Schedule</v-expansion-panel-header>
       <v-expansion-panel-content>
   <v-calendar
       ref="calendar"
       :now="today"
       :value="today"
       :events="events"
+      event-color="#E95A24"
       color="#E95A24"
       type="week"
       :weekdays="weekday"
@@ -30,6 +36,7 @@
       :interval-minutes=120
   ></v-calendar></v-expansion-panel-content>
     </v-expansion-panel></v-expansion-panels>
+  </v-container>
 </template>
 
 <script>

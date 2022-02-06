@@ -1,11 +1,11 @@
 <template>
   <v-container>
-    <v-card style="height:100%">
+    <v-sheet height="100%" min-height="500px">
       <v-toolbar
           color="#E95A24"
           dark
       >
-        <v-app-bar-nav-icon></v-app-bar-nav-icon>
+        <v-icon>mdi-bookshelf</v-icon>
         <v-toolbar-title>Courses Winter 2022</v-toolbar-title>
       </v-toolbar>
       <v-tabs vertical grow color="#E95A24">
@@ -22,7 +22,7 @@
           <MyCoursesStudent/>
         </v-tab-item>
       </v-tabs>
-    </v-card>
+    </v-sheet>
   </v-container>
 </template>
 
