@@ -19,7 +19,7 @@
           <Enroll/>
         </v-tab-item>
         <v-tab-item>
-          <p>Page 2</p>
+          <MyCoursesStudent/>
         </v-tab-item>
       </v-tabs>
     </v-card>
@@ -29,10 +29,12 @@
 <script>
 
 import Enroll from "@/components/Enroll";
+import MyCoursesStudent from "@/components/MyCoursesStudent";
 export default {
-  name: "Student",
+  name: "Courses",
   components: {
-    Enroll
+    Enroll,
+    MyCoursesStudent
   },
 }
 </script>
