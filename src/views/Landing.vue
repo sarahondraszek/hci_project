@@ -16,7 +16,7 @@ import Welcome from "@/components/Welcome";
 import News from "@/components/News";
 
 export default {
-  name: 'StudentLanding',
+  name: 'Landing',
   components: {
     Welcome,
     News,

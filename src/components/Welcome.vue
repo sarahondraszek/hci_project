@@ -12,7 +12,8 @@
         <p>
           Welcome to SpaceGate 54, your course registration portal for Trier Space University.
         </p>
-        <router-link style="text-decoration: none; color: inherit;" to="/student/courses">Go to course page</router-link>
+        <router-link v-if="$route.name === 'TeacherLanding'"  style="text-decoration: none; color: inherit;" to="/teacher/courses">Go to course page</router-link>
+        <router-link v-if="$route.name === 'StudentLanding'" style="text-decoration: none; color: inherit;" to="/student/courses">Go to course page</router-link>
       </v-col>
     </v-row>
   </v-container>

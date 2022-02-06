@@ -5,7 +5,8 @@ import Student from "@/views/Student";
 import Bookbag from "@/views/Bookbag";
 import Teacher from "@/views/Teacher";
 import CoursePage from "@/views/CoursePage";
-import StudentLanding from "@/views/StudentLanding";
+import Landing from "@/views/Landing";
+import CourseManagement from "@/views/CourseManagement";
 
 Vue.use(VueRouter)
 const routes = [
@@ -21,8 +22,8 @@ const routes = [
     children: [
       {
         path: '',
-        name:'Landing',
-        component: StudentLanding
+        name:'StudentLanding',
+        component: Landing
       },
       {
         path:'courses',
@@ -37,7 +38,19 @@ const routes = [
   {
     path: '/teacher',
     name: 'Teacher',
-    component: Teacher
+    component: Teacher,
+    children: [
+      {
+        path: '',
+        name:'TeacherLanding',
+        component: Landing
+      },
+      {
+        path:'courses',
+        name:'Courses',
+        component: CourseManagement
+      },
+    ]
   }
 ]
 
