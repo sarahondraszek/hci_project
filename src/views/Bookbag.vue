@@ -11,10 +11,10 @@
 
       <v-toolbar-title>Course list</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn icon>
+      <v-btn icon @click="selectAll">
         <v-icon>mdi-checkbox-marked-circle</v-icon>
       </v-btn>
-      <v-btn icon>
+      <v-btn icon @click="deleteAll">
         <v-icon>mdi-delete</v-icon>
       </v-btn>
     </v-toolbar>
@@ -28,30 +28,33 @@
           <v-list-item :key="item.title">
             <template v-slot:default="{ active }">
               <v-list-item-content>
-                <v-list-item-title v-text="item.title"></v-list-item-title>
-
                 <v-list-item-subtitle
                     class="text--primary"
                     v-text="item.headline"
                 ></v-list-item-subtitle>
-
-                <v-list-item-subtitle v-text="item.subtitle"></v-list-item-subtitle>
+                <v-list-item-title v-text="item.title"></v-list-item-title>
+                <v-list-item-subtitle v-text="item.sws+' SWS'"></v-list-item-subtitle>
               </v-list-item-content>
-
               <v-list-item-action>
-                <v-list-item-action-text v-text="item.action"></v-list-item-action-text>
-
                 <v-icon
                     v-if="!active"
                     color="grey lighten-1"
                 >
-                  mdi-delete-outline
+                  mdi-checkbox-blank-circle-outline
                 </v-icon>
                 <v-icon
                     v-else
                     color="orange darken-3"
                 >
-                  mdi-delete
+                  mdi-checkbox-marked-circle
+                </v-icon>
+              </v-list-item-action>
+              <v-list-item-action>
+                <v-icon
+                    @click="deleteCourse(index)"
+                    color="grey lighten-1"
+                >
+                  mdi-delete-outline
                 </v-icon>
               </v-list-item-action>
             </template>
@@ -96,28 +99,33 @@ export default {
     selected: [],
     items: [
       {
-        action: 'Pflicht',
-        headline: 'Info',
-        subtitle: `Kurze Beschreibung des Kurses`,
+        headline: 'BWL-001',
         title: 'Einführung in die BWL',
         sws: 5
       },
       {
-        action: 'Pflicht',
-        headline: 'Info',
-        subtitle: `Kurze Beschreibung des Kurses`,
+        headline: 'BWL-002',
         title: 'Einführung in die VWL',
         sws: 5
       },
       {
-        action: 'Pflicht',
-        headline: 'Info',
-        subtitle: `Kurze Beschreibung des Kurses`,
+        headline: 'BWL-003',
         title: 'Mathe 1',
         sws: 10
       },
     ],
   }),
+  methods: {
+    deleteCourse(index) {
+      this.items.splice(index, 1)
+    },
+    deleteAll() {
+      this.items = []
+  },
+    selectAll() {
+
+    }
+  }
 }
 </script>
 

@@ -50,6 +50,7 @@
                     color="#E95A24"
                     v-bind="attrs"
                     v-on="on"
+                    @click="oneClick"
                 >
                   1-click enrollment
                 </v-btn>
@@ -112,6 +113,11 @@ export default {
       panel: 0,
     }
   },
+  methods: {
+    oneClick() {
+  this.allCourses.offered = []
+}
+  }
 }
 </script>
 
