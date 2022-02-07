@@ -22,7 +22,6 @@
             required
         ></v-text-field>
       </v-col>
-
       <v-col
           cols="12"
           md="6"
@@ -44,7 +43,8 @@
     </v-row>
     <v-row>
       <v-col class="text-right">
-        <router-link v-if="studentNames.includes(username.toLowerCase())" style="text-decoration: none;
+        <router-link v-if="studentNames.includes(username.toLowerCase()) && testPassword(password)"
+                     style="text-decoration: none;
           color: inherit;" to="/student">
           <v-tooltip bottom>
             <template v-slot:activator="{ on, attrs }">
@@ -60,7 +60,8 @@
             <span>Login as student</span>
           </v-tooltip>
         </router-link>
-        <router-link v-if="teacherNames.includes(username.toLowerCase())" style="text-decoration: none;
+        <router-link v-if="teacherNames.includes(username.toLowerCase()) && testPassword(password)"
+                     style="text-decoration: none;
           color: inherit;" to="/teacher">
           <v-tooltip bottom>
             <template v-slot:activator="{ on, attrs }">
@@ -86,6 +87,16 @@
 <script>
 const studentNames = ['student', 'fabian', 'kinga', 'sarah', 'chloe', 'johannes', 'will'];
 const teacherNames = ['teacher', 'fabian', 'kinga', 'sarah', 'hank', 'maja'];
+
+const testPassword = (password) => {
+  return (
+      password.length >= 8 &&
+      /.*[a-z].*/.test(password) &&
+      /.*[A-Z].*/.test(password) &&
+      /.*\D.*/.test(password)
+  );
+}
+
 export default {
   name: "Login",
   props: ["title"],
@@ -107,6 +118,7 @@ export default {
     },
     studentNames,
     teacherNames,
+    testPassword,
   }),
 }
 </script>

@@ -1,16 +1,17 @@
 <template>
   <v-container>
     <h2 id="news-head">News for SpaceGate 54 Users</h2>
-    <br>
     <vueper-slides fixed-height="50vh"
                    slide-content-outside="top"
                    autoplay
+                   class="mt-4"
     >
       <vueper-slide v-for="(slide, i) in slides"
                     :key="i"
                     :image="slide.image"
                     :title="slide.title"
                     :content="slide.content"
+                    class="mt-4"
       />
     </vueper-slides>
   </v-container>

@@ -196,18 +196,18 @@ export default {
   methods: {
     deleteCourse(index) {
       this.items.splice(index, 1)
-          this.snackbar = true
+      this.snackbar = true
     },
     deleteAll() {
       this.items = []
-          this.snackbar = true
+      this.snackbar = true
     },
     selectAll() {
 
     },
     confirm() {
       this.items = []
-          this.dialog = true
+      this.dialog = true
     }
   }
 }

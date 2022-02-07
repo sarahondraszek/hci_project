@@ -6,7 +6,7 @@
           dark
       >
         <v-icon>mdi-bookshelf</v-icon>
-        <v-toolbar-title>Courses Winter 2022</v-toolbar-title>
+        <v-toolbar-title>&nbsp;Courses Winter 2022</v-toolbar-title>
       </v-toolbar>
       <v-tabs vertical grow color="#E95A24">
         <v-tab class="vert-tab">

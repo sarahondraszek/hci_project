@@ -24,11 +24,19 @@
         <v-icon>{{ reveal ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
         Details
       </v-btn>
+      <v-spacer></v-spacer>
+      <v-btn
+          text
+          color="#E95A24"
+          v-if="canEdit"
+      >
+        <v-icon>mdi-pencil</v-icon>
+        &nbsp;Edit
+      </v-btn>
     </v-card-actions>
     <v-expand-transition id="details">
       <div v-show="reveal">
         <v-divider></v-divider>
-
         <v-card-text>
           <p>Requirements: TBD</p>
           <p>Description: This is the most interesting course you will ever take.</p>
@@ -49,6 +57,7 @@ export default {
     time: String,
     courseID: String,
     sws: Number,
+    canEdit: Boolean,
   },
   data: () => ({
     reveal: false,

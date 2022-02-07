@@ -15,12 +15,9 @@
         <p> You can view and edit your courses on the
           <router-link v-if="$route.name === 'TeacherLanding'" style="text-decoration: none; color: #E95A24;"
                        to="/teacher/courses">
-            course page
-          </router-link>
+            course page</router-link>
           <router-link v-if="$route.name === 'StudentLanding'" style="text-decoration: none; color: #E95A24;"
-                       to="/student/courses">course page
-          </router-link>
-          .
+                       to="/student/courses">course page</router-link>.
         </p>
       </v-col>
     </v-row>

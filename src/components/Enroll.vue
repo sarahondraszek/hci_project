@@ -5,7 +5,7 @@
         <v-expansion-panels v-model="panel">
 
           <v-expansion-panel>
-            <v-expansion-panel-header color="#E95A24">Mandatory Courses</v-expansion-panel-header>
+            <v-expansion-panel-header color="#272727">Mandatory Courses</v-expansion-panel-header>
             <v-expansion-panel-content>
               <draggable v-model="allCourses.offered"
                          group="allCourses">
@@ -23,7 +23,7 @@
           </v-expansion-panel>
 
           <v-expansion-panel>
-            <v-expansion-panel-header color="#E95A24">Optional Courses</v-expansion-panel-header>
+            <v-expansion-panel-header color="#272727">Optional Courses</v-expansion-panel-header>
             <v-expansion-panel-content><br>You have no optional courses available this semester.
             </v-expansion-panel-content>
           </v-expansion-panel>
@@ -148,7 +148,7 @@ export default {
   methods: {
     oneClick() {
       this.allCourses.offered = []
-          this.snackbar = true
+      this.snackbar = true
     }
   }
 }

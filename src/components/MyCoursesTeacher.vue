@@ -1,8 +1,8 @@
 <template>
   <v-container>
     <v-card>
-      <v-card-title>My courses</v-card-title>
-      <v-card-text>You can view and edit the courses you are currently enrolled in or view your weekly schedule.
+      <v-card-text class="pt-1">
+        You can view and edit the courses you are currently teaching or view your weekly schedule.
       </v-card-text>
     </v-card>
     <v-expansion-panels v-model="panel">
@@ -17,6 +17,7 @@
                   :location='course.location'
                   :time='course.time'
                   :sws='course.sws'
+                  :can-edit="true"
           />
         </v-expansion-panel-content>
       </v-expansion-panel>
@@ -36,6 +37,7 @@
               :first-interval=4
               :interval-count=6
               :interval-minutes=120
+              class="calenderClass"
           ></v-calendar>
           <br>
         </v-expansion-panel-content>
@@ -58,29 +60,59 @@ export default {
     weekday: [1, 2, 3, 4, 5],
     events: [
       {
-        name: 'Course 1',
-        start: '2022-02-09 10:15',
-        end: '2022-02-09 11:45',
+        name: 'HCI',
+        start: '2022-02-07 10:15',
+        end: '2022-02-07 11:45',
       },
       {
-        name: 'Course 2',
+        name: 'Meeting',
+        start: '2022-02-8 10:30',
+        end: '2022-02-8 13:45',
+      },
+      {
+        name: 'Programming I',
+        start: '2022-02-8 14:15',
+        end: '2022-02-8 15:45',
+      },
+      {
+        name: 'Consultation',
+        start: '2022-02-10 11:00',
+        end: '2022-02-10 13:30',
+      },
+      {
+        name: 'Meeting',
         start: '2022-02-10 14:15',
-        end: '2022-02-10 15:45',
+        end: '2022-02-10 16:30',
       },
       {
-        name: 'Course 3',
-        start: '2022-02-11 12:15',
-        end: '2022-02-11 13:45',
+        name: 'Lunch w/ Prof. Graham',
+        start: '2022-02-9 12:30',
+        end: '2022-02-9 13:10',
+      },
+      {
+        name: 'Exam Programming I',
+        start: '2022-02-10 08:15',
+        end: '2022-02-10 09:45',
       },
     ],
-    courses: [{
-      courseID: "BWL-001",
-      title: 'Einführung in die BWL',
-      teacher: "Mueller",
-      location: "Audimax",
-      time: "Mo, 10:15",
-      sws: 5,
-    },]
+    courses: [
+      {
+        courseID: "CS-011",
+        title: 'Human Computer Interaction',
+        teacher: "You",
+        location: "H420",
+        time: "Mo, 10:15",
+        sws: 5,
+      },
+      {
+        courseID: "CS-01",
+        title: 'Programming I',
+        teacher: "You",
+        location: "H69",
+        time: "Tue, 14:15",
+        sws: 10,
+      },
+    ]
   }),
 }
 </script>

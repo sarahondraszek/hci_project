@@ -40,7 +40,6 @@
                 email="johannes.reichelt@space-university.com"/>
         </v-row>
       </v-row>
-
     </v-app-bar>
 
     <!-- Hauptseite-->
@@ -49,7 +48,7 @@
     </v-main>
 
     <!-- Footer-->
-    <v-footer padless>
+    <v-footer padless style="z-index: 10">
       <v-col
           class="text-center"
           cols="12"
@@ -82,6 +81,7 @@ export default {
   }
 }
 </script>
+
 <style>
 @import url('https://fonts.googleapis.com/css?family=Audiowide');
 
@@ -98,5 +98,18 @@ export default {
   font-size: 54px;
   color: #E95A24;
   float: left;
+}
+
+.v-calendar-daily__scroll-area {
+  overflow-y: visible !important;
+}
+
+.v-event-timed-container {
+  margin-left: 10px;
+}
+
+.theme--dark.v-calendar-daily {
+  border-right: #9e9e9e 1px solid;
+  border-bottom: #9e9e9e 1px solid;
 }
 </style>
