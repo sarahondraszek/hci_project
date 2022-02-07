@@ -34,7 +34,8 @@
                 {{ email }}
               </p>
               <v-divider class="my-3"></v-divider>
-              <v-btn
+
+                <v-btn
                   depressed
                   rounded
                   text
@@ -43,6 +44,7 @@
                  Edit Account
               </v-btn>
               <v-divider class="my-3"></v-divider>
+              <router-link style="text-decoration: none; color: inherit;" to="/">
               <v-btn
                   depressed
                   rounded
@@ -50,7 +52,7 @@
               >
                 <v-icon>mdi-logout</v-icon>
                  Log out
-              </v-btn>
+              </v-btn></router-link>
             </div>
           </v-list-item-content>
         </v-card>
