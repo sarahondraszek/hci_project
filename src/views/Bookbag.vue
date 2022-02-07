@@ -1,15 +1,14 @@
 <template>
   <v-card
       class="mx-auto"
-      max-width="800"
+      max-width="900"
   >
     <v-toolbar
         color="#E95A24"
         dark
     >
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
-
-      <v-toolbar-title>Course list</v-toolbar-title>
+      <v-icon>mdi-bookshelf</v-icon>
+      <v-toolbar-title>Your Bookbag</v-toolbar-title>
       <v-spacer></v-spacer>
 
       <v-tooltip bottom>
@@ -88,13 +87,13 @@
         <router-link v-if="$route.name === 'StudentBookbag'" style="text-decoration: none; color: inherit;" to="/student/courses">
           <v-btn
               elevation="2"
-          >Return to courses
+          >Return to Course Page
           </v-btn>
         </router-link>
         <router-link v-if="$route.name === 'TeacherBookbag'" style="text-decoration: none; color: inherit;" to="/teacher/courses">
           <v-btn
               elevation="2"
-          >Return to courses
+          >Return to Course Page
           </v-btn>
         </router-link>
       </v-col>
@@ -104,12 +103,40 @@
           <template v-slot:activator="{ on }">
             <v-btn
                 v-on="on"
+                @click.stop = "confirm()"
                 elevation="2">Confirm
             </v-btn>
           </template>
-          <span v-if="$route.path.match(/\/teacher*/g)">By confirming you will be opening all selected courses to students</span>
-          <span v-if="$route.path.match(/\/student*/g)">By confirming you will be enrolled in all selected courses</span>
+          <span v-if="$route.name === 'TeacherBookbag'">By confirming you will be opening all selected courses to students</span>
+          <span v-if="$route.name === 'StudentBookbag'">By confirming you will be enrolled in all selected courses</span>
         </v-tooltip>
+        <v-dialog v-model="dialog" width="500">
+          <v-card>
+            <v-card-title class="text-h6 orange darken-4">
+              Selection confirmed
+            </v-card-title>
+
+            <v-card-text v-if="$route.name === 'TeacherBookbag'">
+              You have now opened the selected courses for students. You can view them on the "My courses" tab on the course page.
+            </v-card-text>
+            <v-card-text v-if="$route.name === 'StudentBookbag'">
+              You have been enrolled in the selected courses. You can view them on the "My courses" tab on the course page.
+            </v-card-text>
+
+            <v-divider></v-divider>
+
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn
+                  color="#E95A24"
+                  text
+                  @click="dialog = false"
+              >
+                Okay
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
       </v-col>
       <v-snackbar
           v-model="snackbar"
@@ -172,6 +199,10 @@ export default {
   },
     selectAll() {
 
+    },
+    confirm(){
+      this.items = [],
+      this.dialog = true
     }
   }
 }
