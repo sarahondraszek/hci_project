@@ -13,23 +13,23 @@
 
       <v-tooltip bottom>
         <template v-slot:activator="{ on}">
-      <v-btn
-             v-on="on"
-             icon
-             @click="selectAll">
-        <v-icon>mdi-checkbox-marked-circle</v-icon>
-      </v-btn>
+          <v-btn
+              v-on="on"
+              icon
+              @click="selectAll">
+            <v-icon>mdi-checkbox-marked-circle</v-icon>
+          </v-btn>
         </template>
         <span>Select all</span>
       </v-tooltip>
 
       <v-tooltip bottom>
         <template v-slot:activator="{ on }">
-      <v-btn
-             v-on="on"
-             icon @click="deleteAll">
-        <v-icon>mdi-delete</v-icon>
-      </v-btn>
+          <v-btn
+              v-on="on"
+              icon @click="deleteAll">
+            <v-icon>mdi-delete</v-icon>
+          </v-btn>
         </template>
         <span>Delete all courses in your Bookbag</span>
       </v-tooltip>
@@ -84,13 +84,15 @@
     </v-list>
     <v-row class="px-3 pt-1">
       <v-col class="text-left">
-        <router-link v-if="$route.name === 'StudentBookbag'" style="text-decoration: none; color: inherit;" to="/student/courses">
+        <router-link v-if="$route.name === 'StudentBookbag'" style="text-decoration: none; color: inherit;"
+                     to="/student/courses">
           <v-btn
               elevation="2"
           >Return to Course Page
           </v-btn>
         </router-link>
-        <router-link v-if="$route.name === 'TeacherBookbag'" style="text-decoration: none; color: inherit;" to="/teacher/courses">
+        <router-link v-if="$route.name === 'TeacherBookbag'" style="text-decoration: none; color: inherit;"
+                     to="/teacher/courses">
           <v-btn
               elevation="2"
           >Return to Course Page
@@ -103,12 +105,13 @@
           <template v-slot:activator="{ on }">
             <v-btn
                 v-on="on"
-                @click.stop = "confirm()"
+                @click.stop="confirm()"
                 elevation="2">Confirm
             </v-btn>
           </template>
           <span v-if="$route.name === 'TeacherBookbag'">By confirming you will be opening all selected courses to students</span>
-          <span v-if="$route.name === 'StudentBookbag'">By confirming you will be enrolled in all selected courses</span>
+          <span
+              v-if="$route.name === 'StudentBookbag'">By confirming you will be enrolled in all selected courses</span>
         </v-tooltip>
         <v-dialog v-model="dialog" width="500">
           <v-card>
@@ -117,10 +120,12 @@
             </v-card-title>
 
             <v-card-text v-if="$route.name === 'TeacherBookbag'">
-              You have now opened the selected courses for students. You can view them on the "My courses" tab on the course page.
+              You have now opened the selected courses for students. You can view them on the "My courses" tab on the
+              course page.
             </v-card-text>
             <v-card-text v-if="$route.name === 'StudentBookbag'">
-              You have been enrolled in the selected courses. You can view them on the "My courses" tab on the course page.
+              You have been enrolled in the selected courses. You can view them on the "My courses" tab on the course
+              page.
             </v-card-text>
 
             <v-divider></v-divider>
@@ -183,26 +188,26 @@ export default {
         sws: 10
       },
     ],
-    snackbar : false,
+    snackbar: false,
     text: 'Successfully deleted.',
     timeout: 1500,
     dialog: false,
   }),
   methods: {
     deleteCourse(index) {
-      this.items.splice(index, 1),
-      this.snackbar = true
+      this.items.splice(index, 1)
+          this.snackbar = true
     },
     deleteAll() {
-      this.items = [],
-      this.snackbar = true
-  },
+      this.items = []
+          this.snackbar = true
+    },
     selectAll() {
 
     },
-    confirm(){
-      this.items = [],
-      this.dialog = true
+    confirm() {
+      this.items = []
+          this.dialog = true
     }
   }
 }

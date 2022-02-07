@@ -8,8 +8,7 @@
 
 export default {
   name: "Teacher",
-  components: {
-  },
+  components: {},
 }
 </script>
 

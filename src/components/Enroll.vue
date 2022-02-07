@@ -7,26 +7,27 @@
           <v-expansion-panel>
             <v-expansion-panel-header color="#E95A24">Mandatory Courses</v-expansion-panel-header>
             <v-expansion-panel-content>
-        <draggable v-model="allCourses.offered"
-                   group="allCourses">
-          <Course v-for="course in allCourses.offered"
-                  :key="course.courseID"
-                  :courseID='course.courseID'
-                  :title='course.title'
-                  :teacher='course.teacher'
-                  :location='course.location'
-                  :time='course.time'
-                  :sws='course.sws'
-          />
-        </draggable>
+              <draggable v-model="allCourses.offered"
+                         group="allCourses">
+                <Course v-for="course in allCourses.offered"
+                        :key="course.courseID"
+                        :courseID='course.courseID'
+                        :title='course.title'
+                        :teacher='course.teacher'
+                        :location='course.location'
+                        :time='course.time'
+                        :sws='course.sws'
+                />
+              </draggable>
             </v-expansion-panel-content>
           </v-expansion-panel>
 
           <v-expansion-panel>
             <v-expansion-panel-header color="#E95A24">Optional Courses</v-expansion-panel-header>
-            <v-expansion-panel-content> You have no optional courses available this semester.</v-expansion-panel-content>
+            <v-expansion-panel-content><br>You have no optional courses available this semester.
+            </v-expansion-panel-content>
           </v-expansion-panel>
-          </v-expansion-panels>
+        </v-expansion-panels>
       </v-col>
 
       <v-col cols="3">
@@ -98,11 +99,11 @@ export default {
   components: {
     draggable,
     Course
-},
+  },
   data() {
     return {
       allCourses: {
-        offered:[{
+        offered: [{
           courseID: "BWL-001",
           title: 'Einführung in die BWL',
           teacher: "Mueller",
@@ -110,12 +111,14 @@ export default {
           time: "Mo, 10:15",
           sws: 5,
         },
-          {courseID: "BWL-002",
+          {
+            courseID: "BWL-002",
             title: "Einführung in die VWL",
-            teacher:"Haupt",
+            teacher: "Haupt",
             location: "A18",
             time: "Di, 14:15",
-            sws:5,},
+            sws: 5,
+          },
           {
             courseID: "BWL-003",
             title: "Mathe 1",
@@ -144,9 +147,9 @@ export default {
   },
   methods: {
     oneClick() {
-  this.allCourses.offered = [],
-      this.snackbar = true
-}
+      this.allCourses.offered = []
+          this.snackbar = true
+    }
   }
 }
 </script>

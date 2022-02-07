@@ -22,10 +22,11 @@
           @click="reveal = !reveal"
       >
         <v-icon>{{ reveal ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
-        Details</v-btn>
+        Details
+      </v-btn>
     </v-card-actions>
     <v-expand-transition id="details">
-      <div v-show="reveal" >
+      <div v-show="reveal">
         <v-divider></v-divider>
 
         <v-card-text>
@@ -59,6 +60,6 @@ export default {
 .courseCard {
   cursor: pointer;
   float: left;
-  margin: 10px ;
+  margin: 10px;
 }
 </style>

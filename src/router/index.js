@@ -22,17 +22,19 @@ const routes = [
     children: [
       {
         path: '',
-        name:'StudentLanding',
+        name: 'StudentLanding',
         component: Landing
       },
       {
-        path:'courses',
-        name:'Courses',
+        path: 'courses',
+        name: 'Courses',
         component: CoursePage
       },
-      {path: 'bookbag',
+      {
+        path: 'bookbag',
         name: 'StudentBookbag',
-        component: Bookbag}
+        component: Bookbag
+      }
     ]
   },
   {
@@ -42,17 +44,19 @@ const routes = [
     children: [
       {
         path: '',
-        name:'TeacherLanding',
+        name: 'TeacherLanding',
         component: Landing
       },
       {
-        path:'courses',
-        name:'Courses',
+        path: 'courses',
+        name: 'Courses',
         component: CourseManagement
       },
-      {path: 'bookbag',
+      {
+        path: 'bookbag',
         name: 'TeacherBookbag',
-        component: Bookbag}
+        component: Bookbag
+      }
     ]
   }
 ]

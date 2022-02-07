@@ -36,8 +36,8 @@
                 initials="MD" fullName="Maja Drews"
                 email="maja.drews@space-university.com"/>
           <User v-if="$route.path.match(/\/student*/g)"
-                initials="MR" fullName="Max Reichelt"
-                email="max.reichelt@space-university.com"/>
+                initials="JR" fullName="Johannes Reichelt"
+                email="johannes.reichelt@space-university.com"/>
         </v-row>
       </v-row>
 

@@ -30,6 +30,7 @@
 
 import Enroll from "@/components/Enroll";
 import MyCoursesStudent from "@/components/MyCoursesStudent";
+
 export default {
   name: "Courses",
   components: {
@@ -40,7 +41,7 @@ export default {
 </script>
 
 <style scoped>
-.vert-tab{
+.vert-tab {
   transform: rotate(270deg);
 }
 </style>

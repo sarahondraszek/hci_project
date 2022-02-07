@@ -43,7 +43,7 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col class="text-right" >
+      <v-col class="text-right">
         <router-link v-if="studentNames.includes(username.toLowerCase())" style="text-decoration: none;
           color: inherit;" to="/student">
           <v-tooltip bottom>
@@ -84,7 +84,7 @@
 </template>
 
 <script>
-const studentNames = ['student', 'fabian', 'kinga', 'sarah', 'chloe', 'johannes', 'will', 'hurensohn'];
+const studentNames = ['student', 'fabian', 'kinga', 'sarah', 'chloe', 'johannes', 'will'];
 const teacherNames = ['teacher', 'fabian', 'kinga', 'sarah', 'hank', 'maja'];
 export default {
   name: "Login",

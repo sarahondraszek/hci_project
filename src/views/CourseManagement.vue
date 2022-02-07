@@ -101,7 +101,7 @@
                   Create course
                 </v-btn>
               </template>
-              <span>Login as teacher</span>
+              <span>Create a new course with the input given above</span>
             </v-tooltip>
           </v-col>
         </v-card>
