@@ -83,7 +83,7 @@
 </template>
 
 <script>
-const studentNames = ['student', 'fabian', 'kinga', 'sarah', 'chloe', 'johannes', 'will', 'whoreson'];
+const studentNames = ['student', 'fabian', 'kinga', 'sarah', 'chloe', 'johannes', 'will'];
 const teacherNames = ['teacher', 'fabian', 'kinga', 'sarah', 'hank', 'maja'];
 
 const testPassword = (password) => {
