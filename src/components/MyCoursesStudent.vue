@@ -17,6 +17,7 @@
                   :location='course.location'
                   :time='course.time'
                   :sws='course.sws'
+                  :can-edit="true"
           />
         </v-expansion-panel-content>
       </v-expansion-panel>

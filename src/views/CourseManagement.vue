@@ -39,7 +39,7 @@
         <v-card class="pa-md-4" color="dark-grey">
           <v-img src="@/assets/bag.png" contain></v-img>
           <v-card-actions class="justify-center">
-            <router-link style="text-decoration: none; color: inherit;" to="">
+            <router-link style="text-decoration: none; color: inherit;" to="/teacher/bookbag">
               <v-btn
                   outlined
                   rounded
