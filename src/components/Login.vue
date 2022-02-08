@@ -30,14 +30,12 @@
             color="#E65100"
             :rules="[passwordRules.checkLength, passwordRules.checkLowerCase, passwordRules.checkUpperCase,
               passwordRules.checkDigit]"
-            :value="userPassword"
             v-model="password"
             label="Password"
             required
-            :append-icon="value ? 'mdi-eye' : 'mdi-eye-off'"
-            @click:append="() => (value = !value)"
-            :type="value ? 'password' : 'password'"
-            @input="_=>userPassword=_"
+            :append-icon="!isPasswordVisible ? 'mdi-eye' : 'mdi-eye-off'"
+            @click:append="() => (isPasswordVisible = !isPasswordVisible)"
+            :type="isPasswordVisible ? 'text' : 'password'"
         ></v-text-field>
       </v-col>
     </v-row>
@@ -85,7 +83,7 @@
 </template>
 
 <script>
-const studentNames = ['student', 'fabian', 'kinga', 'sarah', 'chloe', 'johannes', 'will'];
+const studentNames = ['student', 'fabian', 'kinga', 'sarah', 'chloe', 'johannes', 'will', 'whoreson'];
 const teacherNames = ['teacher', 'fabian', 'kinga', 'sarah', 'hank', 'maja'];
 
 const testPassword = (password) => {
@@ -93,7 +91,7 @@ const testPassword = (password) => {
       password.length >= 8 &&
       /.*[a-z].*/.test(password) &&
       /.*[A-Z].*/.test(password) &&
-      /.*\D.*/.test(password)
+      /.*\d.*/.test(password)
   );
 }
 
@@ -114,11 +112,12 @@ export default {
       checkLength: value => value.length >= 8 || 'Password need to be at least 8 characters long',
       checkLowerCase: value => /.*[a-z].*/.test(value) || 'Password must contain lower case characters',
       checkUpperCase: value => /.*[A-Z].*/.test(value) || 'Password must contain upper case characters',
-      checkDigit: value => /.*\D.*/.test(value) || 'Password must contain a digit',
+      checkDigit: value => /.*\d.*/.test(value) || 'Password must contain a digit',
     },
     studentNames,
     teacherNames,
     testPassword,
+    isPasswordVisible: false,
   }),
 }
 </script>

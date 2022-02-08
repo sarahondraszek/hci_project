@@ -29,9 +29,9 @@
           </v-card-text>
           <draggable class="row justify-content-center px-6" :sort="true">
             <Course courseID="CS-008" title="Data Structures" teacher="You" location="HS12"
-                    time="Mo, 10:15" sws="10" canEdit/>
+                    time="Mo, 10:15" sws=10 canEdit/>
             <Course courseID="CS-003" title="Logic" teacher="You" location="HS10"
-                    time="Tue, 10:15 and Fr, 12:15" sws="5" canEdit/>
+                    time="Tue, 10:15 and Fr, 12:15" sws=5 canEdit/>
           </draggable>
         </v-card>
       </v-col>
@@ -65,37 +65,31 @@
           </v-toolbar>
           <v-col>
             <v-text-field
-                v-model="value"
                 color="#E65100"
                 :counter="2"
                 label="Course ID Prefix"
             ></v-text-field>
             <v-text-field
-                v-model="value"
                 color="#E65100"
                 :counter="30"
                 label="Course Name"
             ></v-text-field>
             <v-text-field
-                v-model="value"
                 color="#E65100"
                 :counter="2"
                 label="SWS"
             ></v-text-field>
             <v-text-field
-                v-model="value"
                 color="#E65100"
                 :counter="30"
                 label="Teacher"
             ></v-text-field>
             <v-text-field
-                v-model="value"
                 color="#E65100"
                 :counter="10"
                 label="Location"
             ></v-text-field>
             <v-text-field
-                v-model="value"
                 color="#E65100"
                 :counter="20"
                 label="Time"
