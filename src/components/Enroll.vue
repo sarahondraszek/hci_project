@@ -48,7 +48,7 @@
               </v-btn>
             </router-link>
           </v-card-actions>
-          <v-card-actions>
+          <v-card-actions class="justify-center">
             <v-tooltip bottom>
               <template v-slot:activator="{ on, attrs }">
                 <v-btn
@@ -60,7 +60,7 @@
                     v-on="on"
                     @click="oneClick"
                 >
-                  1-click enrollment
+                  1-click Add <br> to Bookbag
                 </v-btn>
               </template>
               <span>Add all mandatory courses to your Bookbag at once</span>

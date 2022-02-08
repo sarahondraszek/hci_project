@@ -68,6 +68,7 @@ export default {
 <style scoped>
 .courseCard {
   cursor: pointer;
+  user-select: none;
   float: left;
   margin: 10px;
 }
