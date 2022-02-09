@@ -55,7 +55,7 @@ export default {
   },
   data: () => ({
     panel: 0,
-    today: '2022-02-08',
+    today: new Date().getFullYear()+'-'+(new Date().getMonth()+1)+'-'+new Date().getDate(),
     weekday: [1, 2, 3, 4, 5],
     events: [
       {
