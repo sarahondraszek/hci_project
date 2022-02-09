@@ -28,8 +28,8 @@
 
 <script>
 
-import Enroll from "@/components/Enroll";
-import MyCoursesStudent from "@/components/MyCoursesStudent";
+import Enroll from "@/components/student/Enroll";
+import MyCoursesStudent from "@/components/student/MyCoursesStudent";
 
 export default {
   name: "Courses",

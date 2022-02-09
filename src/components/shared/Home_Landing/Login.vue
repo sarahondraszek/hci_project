@@ -79,6 +79,15 @@
         </router-link>
       </v-col>
     </v-row>
+    <v-row>
+      <v-card
+      outlined>
+        <v-card-text>
+          *hint* <br>
+          Prototype login: 'student' or 'teacher' with any password (example: 'SpaceGate54')
+        </v-card-text>
+      </v-card>
+    </v-row>
   </v-container>
 </template>
 
@@ -109,7 +118,7 @@ export default {
           'Account not found',
     },
     passwordRules: {
-      checkLength: value => value.length >= 8 || 'Password need to be at least 8 characters long',
+      checkLength: value => value.length >= 8 || 'Password needs to be at least 8 characters long',
       checkLowerCase: value => /.*[a-z].*/.test(value) || 'Password must contain lower case characters',
       checkUpperCase: value => /.*[A-Z].*/.test(value) || 'Password must contain upper case characters',
       checkDigit: value => /.*\d.*/.test(value) || 'Password must contain a digit',

@@ -14,9 +14,9 @@
 
 <script>
 
-import Description from "@/components/Description";
-import News from "@/components/News";
-import Login from "@/components/Login";
+import Description from "@/components/shared/Home_Landing/Description";
+import News from "@/components/shared/Home_Landing/News";
+import Login from "@/components/shared/Home_Landing/Login";
 
 export default {
   name: 'Home',

@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import Welcome from "@/components/Welcome";
-import News from "@/components/News";
+import Welcome from "@/components/shared/Home_Landing/Welcome";
+import News from "@/components/shared/Home_Landing/News";
 
 export default {
   name: 'Landing',

@@ -147,8 +147,8 @@
 
 <script>
 import draggable from "vuedraggable";
-import Course from "@/components/Course";
-import MyCoursesTeacher from "@/components/MyCoursesTeacher";
+import Course from "@/components/shared/Course";
+import MyCoursesTeacher from "@/components/teacher/MyCoursesTeacher";
 
 export default {
   name: "CourseManagement",

@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import DailyCalendar from "@/components/DailyCalendar";
+import DailyCalendar from "@/components/shared/Home_Landing/DailyCalendar";
 
 export default {
   name: "Welcome",

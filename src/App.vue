@@ -59,7 +59,7 @@
   </v-app>
 </template>
 <script>
-import User from "@/components/User";
+import User from "@/components/shared/User";
 
 export default {
   name: 'App',

@@ -92,7 +92,7 @@
 
 <script>
 import draggable from "vuedraggable";
-import Course from "@/components/Course";
+import Course from "@/components/shared/Course";
 
 export default {
   name: "Enroll",
